@@ -1,0 +1,27 @@
+{
+  "name": "qbui",
+  "version": "1.0.0",
+  "description": "A collection of css theme and js plugins for qb",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/majiangl/qbui.git"
+  },
+  "keywords": [],
+  "author": "mjl",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/majiangl/qbui/issues"
+  },
+  "homepage": "https://github.com/majiangl/qbui",
+  "devDependencies": {
+    "gulp-clean-css": "^2.0.11",
+    "gulp-concat": "^2.6.0",
+    "gulp-less": "^3.1.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^1.5.4"
+  }
+}

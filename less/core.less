@@ -1,0 +1,178 @@
+/* Core
+   ========================================================================== */
+   
+* {
+    box-sizing: border-box;
+}
+
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-size: @font-size-base;
+    line-height: @line-height-base;
+    font-family: @font-family-base;
+    background-color: @body-bg;
+    color: @text-color;
+    font-weight: @font-weight;
+}
+
+img {
+    vertical-align: middle;
+}
+
+a {
+    color: @link-color;
+    text-decoration: none;
+    &:hover {
+        color: @link-hover-color;
+        text-decoration: underline;
+    }
+    &:active {
+        color: @link-active-color;
+    }
+}
+
+/* scrollbar */
+::-webkit-scrollbar {
+    width: 9px;
+    height: 9px;
+}
+
+::-webkit-scrollbar-track,
+::-webkit-scrollbar-corner {
+    background-color: @body-bg;
+}
+
+::-webkit-scrollbar-track-piece {
+    border-radius: 4px;
+    background-color: @scrollbar-bg;
+}
+
+::-webkit-scrollbar-thumb {
+    border: 1px solid @scrollbar-bg;
+    border-radius: 4px;
+    background-color: @scrollbar-color;
+    &:hover {
+        background-color: @scrollbar-hover-color;
+    }
+    &:active {
+        background-color: @scrollbar-active-color;
+    }
+}
+
+/* button */
+.btn {
+    display: inline-block;
+    text-align: center;
+    white-space: nowrap;
+    .control-size(@font-size-base;@line-height-base;@btn-padding-base-vertical;
+        @btn-padding-base-horizontal;@control-border-color;@border-radius-base);
+    color: @btn-text-color;
+    background-color: @btn-bg;
+    .user-select(none);
+    &:hover {
+        background-color: @btn-hover-bg;
+    }
+    &:active {
+        background-color: @btn-active-bg;
+    }
+    &[disabled] {
+        color: @btn-text-disabled-color;
+        background-color: @btn-disabled-bg;
+    }
+    a& {
+        &:hover {
+            color: @btn-text-color;
+            text-decoration: none;
+        }
+        &:active {
+            color: @btn-text-color;
+        }
+        &.disabled {
+            color: @btn-text-disabled-color;
+            background-color: @btn-disabled-bg;
+            cursor: default;
+        }
+    }
+}
+
+/* input */
+.text-input {
+    .control-size(@font-size-base;@line-height-base;@padding-base-vertical;
+        @padding-base-horizontal;@control-border-color;@border-radius-base);
+    background-color: @input-bg;
+    color: @input-text-color;
+    box-shadow: @input-box-shadow;
+    outline: none;
+    &:focus {
+        background-color: @input-focus-bg;
+    }
+    &[disabled] {
+        background-color: @input-disabled-bg;
+        box-shadow: none;
+    }
+    
+    &.search {
+        .input-icon-left("../img/search.png"; 4px center);
+    }
+    
+    &.date {
+        color: @text-color;
+        background-color: @date-input-bg;
+        .input-icon-right("../img/calendar.png"; top 2px right 2px);
+        width: 120px;
+    }
+}
+
+/* Tab Group */
+.tab-group {
+    .list-unstyle();
+    display: inline-block;
+    vertical-align: middle;
+    li {
+        float: left;
+        border: 1px solid @tab-group-active-bg;
+        margin-right: -1px;
+        &:last-child {
+            margin-right: 0;
+        }
+        
+        a {
+            display: block;
+            text-decoration: none;
+            color: @text-color;
+            background-color: @tab-group-bg;
+            padding: @tab-group-padding-vertical @tab-group-padding-horizontal;
+            &.active {
+                color: @tab-group-active-text-color;
+                background-color: @tab-group-active-bg;
+            }
+        }
+    }
+}
+
+
+/* check Group */
+.check-group {
+    display: inline-block;
+    vertical-align: middle;
+    input {
+        display: none;
+    }
+    label {
+        background-color: @check-group-bg;
+        padding: @padding-base-vertical @padding-base-horizontal;
+        text-align: center;
+        float: left;
+        margin-right: 1px;
+        cursor: pointer;
+        &.checked {
+            background-color: @check-group-active-bg;
+            color: @check-group-active-text-color;
+        }
+    }
+}
+

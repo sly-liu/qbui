@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>QB UI</title>
+    <link rel="stylesheet" href="dist/css/qb.css">
+    <link rel="stylesheet" href="demo/index.css">
+    <script src="demo/jquery.min.js"></script>
+    <script src="dist/js/qb.min.js"></script>
+    <script>
+    $(function() {
+        $('#datepicker').datepicker({
+            language: "zh-CN",
+            autoclose: true,
+            todayHighlight: true,
+            daysOfWeekHighlighted: "0,6"
+        });
+
+        $('#checks>label').check();
+
+        $('#tabGroup').tab();
+
+        $('#checkGroup').checkgroup();
+        
+        $('#qtipText').qtip();
+    });
+    </script>
+</head>
+
+<body>
+    <p>Text:</p>
+    <div class="examples">
+        <span>默认文字</span>
+        <a href="#">链接文字</a>
+    </div>
+    
+    <p>Button:</p>
+    <div class="examples">
+        <button type="button" class="btn">Button</button>
+        <a href="#" class="btn">Link</a>
+        <button type="button" class="btn" disabled>Disabled Button</button>
+        <a href="#" class="btn disabled">Link</a>
+    </div>
+    
+    <p>Input:</p>
+    <div class="examples">
+        <input type="text" class="text-input" value="文本框">
+        <input type="text" class="text-input" disabled value="disabled input">
+        <input type="text" class="text-input search" value="搜索">
+        <input type="text" class="text-input date" id="datepicker">
+    </div>
+    
+    <p>Checkbox/Radio:</p>
+    <div id="checks" class="examples">
+        <label>
+            <input type="checkbox" name="checkbox" value="true" checked> Checked
+        </label>
+        <label>
+            <input type="checkbox" name="checkbox" value="true"> Unchecked
+        </label>
+        <label>
+            <input type="checkbox" name="checkbox" value="true" disabled> Disabled
+        </label>
+        <label>
+            <input type="radio" name="radio" value="true" checked> Checked
+        </label>
+        <label>
+            <input type="radio" name="radio" value="true"> Unchecked
+        </label>
+        <label>
+            <input type="radio" name="radio" value="true" disabled> Disabled
+        </label>
+    </div>
+    
+    <p>Tab Group:</p>
+    <div class="examples">
+        <ul id="tabGroup" class="tab-group">
+            <li>
+                <a href="#tab1" class="active">未确认</a>
+            </li>
+            <li>
+                <a href="#tab2">已确认</a>
+            </li>
+            <li>
+                <a href="#tab3">已发布</a>
+            </li>
+        </ul>
+    </div>
+    
+    <p>Check Group:</p>
+    <div class="examples">
+        <div id="checkGroup" class="check-group">
+            <label class="checked" data-all>
+                <input type="checkbox" name="options" value="all" checked>全部
+            </label>
+            <label>
+                <input type="checkbox" name="options" value="o/n">O/N
+            </label>
+            <label>
+                <input type="checkbox" name="options" value="1w">1W
+            </label>
+            <label>
+                <input type="checkbox" name="options" value="2w">2W
+            </label>
+            <label>
+                <input type="checkbox" name="options" value="1m">1M
+            </label>
+            <label>
+                <input type="checkbox" name="options" value="2m">2M
+            </label>
+            <label>
+                <input type="checkbox" name="options" value="3m">3M
+            </label>
+            <label>
+                <input type="checkbox" name="options" value="6m">6M
+            </label>
+            <label>
+                <input type="checkbox" name="options" value="1y">≥1Y
+            </label>
+        </div>          
+    </div>
+    
+    <p>Tooltip:</p>
+    <div class="examples">
+        <span id="qtipText" title="I'm Tooltip!">Hover Me!</span>
+    </div>
+</body>
+
+</html>

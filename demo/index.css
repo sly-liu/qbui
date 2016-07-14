@@ -1,0 +1,16 @@
+body {
+    padding: 10px;
+}
+
+.examples {
+    padding-left: 20px;
+    padding-bottom: 20px;
+}
+
+#checkGroup label {
+    width: 60px;
+}
+
+#checks > label {
+    margin-right: 20px;
+}

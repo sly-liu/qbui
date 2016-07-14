@@ -1,0 +1,130 @@
+/* datepicker */
+.datepicker {
+    border-radius: @border-radius-small;
+}
+
+.datepicker-dropdown {
+    margin-top: 2px;
+    padding: 4px;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    float: left;
+    display: none;
+    min-width: 160px;
+    list-style: none;
+    background-color: @datepicker-bg;
+    border: 1px solid @datepicker-border-color;
+    font-size: 12px;
+    font-family: verdana, sans-serif;
+}
+
+.datepicker > div {
+    display: none;
+}
+
+.datepicker table {
+    margin: 0;
+    .user-select(none);
+}
+
+.datepicker table tr td,
+.datepicker table tr th {
+    text-align: center;
+    width: 30px;
+    height: 30px;
+    border: none;
+}
+
+.datepicker table tr td.day {
+    cursor: pointer;
+    border-radius: @border-radius-small;
+}
+
+.datepicker table tr td.highlighted {
+    color: @datepicker-highlight-text-color;
+}
+
+.datepicker table tr td.old,
+.datepicker table tr td.new {
+    color: @datepicker-disabled-text-color;
+}
+
+.datepicker table tr td.day:hover,
+.datepicker table tr td.day.focused {
+    background: @datepicker-hover-bg;
+}
+
+.datepicker table tr td.today,
+.datepicker table tr td.today:hover,
+.datepicker table tr td.today.focused {
+    background-color: @datepicker-today-bg;
+}
+
+.datepicker table tr td.active,
+.datepicker table tr td.active:hover,
+.datepicker table tr td.active.focused {
+    color: @datepicker-active-text-color;
+    background-color: @datepicker-active-bg;
+}
+
+.datepicker table tr td span {
+    display: block;
+    width: 23%;
+    height: 54px;
+    line-height: 54px;
+    float: left;
+    margin: 1%;
+    cursor: pointer;
+    border-radius: @border-radius-small;
+}
+
+.datepicker table tr td span:hover {
+    background: @datepicker-hover-bg;
+}
+
+.datepicker table tr td span.old,
+.datepicker table tr td span.new {
+    color: @datepicker-disabled-text-color;
+}
+
+.datepicker table tr td span.active,
+.datepicker table tr td span.active:hover,
+.datepicker table tr td span.active.focused {
+    color: @datepicker-active-text-color;
+    background-color: @datepicker-active-bg;
+}
+
+.datepicker .datepicker-switch {
+    width: 145px;
+}
+
+.datepicker .datepicker-switch,
+.datepicker .prev,
+.datepicker .next,
+.datepicker tfoot tr th {
+    border-radius: @border-radius-small;
+    cursor: pointer;
+}
+
+.datepicker .datepicker-switch:hover,
+.datepicker .prev:hover,
+.datepicker .next:hover,
+.datepicker tfoot tr th:hover {
+    background: @datepicker-hover-bg;
+}
+
+.datepicker .cw {
+    font-size: 10px;
+    width: 12px;
+    padding: 0 2px 0 5px;
+    vertical-align: middle;
+}
+
+.datepicker.datepicker-dropdown th,
+.datepicker.datepicker-inline th,
+.datepicker.datepicker-dropdown td,
+.datepicker.datepicker-inline td {
+    padding: 0px 5px;
+}

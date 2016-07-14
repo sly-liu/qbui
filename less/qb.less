@@ -1,3 +1,45 @@
 @import url(config.less);
 @import url(normalize.less);
 @import url(core.less);
+@import url(datepicker.less);
+@import url(check.less);
+@import url(qtip.less);
+
+.user-select(@value) {
+    user-select: @value;
+    -moz-user-select: @value;
+    -ms-user-select: @value;
+    -webkit-user-select: @value;
+}
+
+.control-size(@font-size; @line-height; @padding-vertical; @padding-horizontal; @border-color; @border-radius) {
+    font-size: @font-size;
+    line-height: @line-height;
+    padding: @padding-vertical @padding-horizontal;
+    border: 1px solid @border-color;
+    border-radius: @border-radius;
+}
+
+.bg-img(@background-image; @background-repeat; @background-position) {
+    background-image: @background-image;
+    background-repeat: @background-repeat;
+    background-position: @background-position;
+}
+
+.input-icon-left(@image; @background-position) {
+    @background-image: url(@image);
+    .bg-img(@background-image; no-repeat; @background-position);
+    padding-left: @input-icon-padding;
+}
+
+.input-icon-right(@image; @background-position) {
+    @background-image: url(@image);
+    .bg-img(@background-image; no-repeat; @background-position);
+    padding-right: @input-icon-padding;
+}
+
+.list-unstyle() {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}

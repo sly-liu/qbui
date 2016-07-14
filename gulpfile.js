@@ -1,4 +1,5 @@
 var gulp = require('gulp');
+var cache = require('gulp-cached');
 var cleanCss = require('gulp-clean-css');
 var concat = require('gulp-concat');
 var less = require('gulp-less');
@@ -23,4 +24,16 @@ gulp.task('js', function(){
             .pipe(gulp.dest('dist/js'));
 });
 
-gulp.task('default', ['css', 'js']);
+gulp.task('img', function(){
+    return gulp.src('img/*')
+            .pipe(cache('img'))
+            .pipe(gulp.dest('dist/img'));
+});
+
+gulp.task('watch', function(){
+    gulp.watch('less/*.less', ['css']);
+    gulp.watch('js/*.js', ['js']);
+    gulp.watch('img/*', ['img'])
+});
+
+gulp.task('default', ['css', 'js', 'img']);

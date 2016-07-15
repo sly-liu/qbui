@@ -1,0 +1,206 @@
+/*datatables*/
+.dataTable {
+    clear: both;
+    width: 100%;   
+}
+
+.dataTable thead th,
+.dataTable tbody td {
+    padding: @datatable-td-padding;
+}
+
+.dataTable tbody {
+    color: @text-color-yellow;
+}
+
+.dataTable thead th:active,
+.dataTable thead td:active {
+    outline: none;
+}
+
+.dataTable thead tr {
+    background-color: @datatable-head-row-bg;
+}
+
+.dataTable tbody tr.odd {
+    background-color: @datatable-odd-row-bg;
+}
+
+
+.dataTable tbody tr.even {
+    background-color: @datatable-even-row-bg;
+}
+
+.dataTable.hover tbody tr:hover {
+    background-color: @datatable-row-hover-bg;
+}
+
+
+.dataTable thead .sorting,
+.dataTable thead .sorting_asc,
+.dataTable thead .sorting_desc {
+    cursor: pointer;
+    &::after {
+        content: '';
+        vertical-align: middle;
+        margin-bottom: 2px;
+        margin-left: 4px;
+    }
+}
+
+.dataTable thead .sorting_desc::after{
+    .caret-down(@datatable-sorting-caret-size, @datatable-sorting-caret-color);  
+}
+
+.dataTable thead .sorting_asc::after{
+    .caret-up(@datatable-sorting-caret-size, @datatable-sorting-caret-color);  
+}
+
+.dataTable.nowrap th,
+.dataTable.nowrap td {
+    white-space: nowrap;
+}
+
+.dataTable,
+.dataTable th,
+.dataTable td {
+    box-sizing: content-box;
+}
+
+.dataTables_wrapper {
+    position: relative;
+}
+
+.dataTables_wrapper .dataTables_processing {
+    position: absolute;
+}
+
+.dataTables_wrapper .dataTables_scroll {
+    clear: both;
+}
+
+.dataTables_wrapper .dataTables_scroll div.dataTables_scrollBody {
+    -webkit-overflow-scrolling: touch;
+}
+
+.dataTables_wrapper .dataTables_scroll div.dataTables_scrollBody th,
+.dataTables_wrapper .dataTables_scroll div.dataTables_scrollBody td {
+    vertical-align: middle;
+}
+
+.dataTables_wrapper .dataTables_scroll div.dataTables_scrollBody th > div.dataTables_sizing,
+.dataTables_wrapper .dataTables_scroll div.dataTables_scrollBody td > div.dataTables_sizing {
+    height: 0;
+    overflow: hidden;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.dataTables_wrapper:after {
+    visibility: hidden;
+    display: block;
+    content: "";
+    clear: both;
+    height: 0;
+}
+
+.dataTable thead th.dt-head-left,
+.dataTable thead td.dt-head-left,
+.dateTable tfoot th.dt-head-left,
+.dateTable tfoot td.dt-head-left {
+    text-align: left;
+}
+
+.dataTable thead th.dt-head-center,
+.dataTable thead td.dt-head-center,
+.dateTable tfoot th.dt-head-center,
+.dateTable tfoot td.dt-head-center {
+    text-align: center;
+}
+
+.dataTable thead th.dt-head-right,
+.dataTable thead td.dt-head-right,
+.dateTable tfoot th.dt-head-right,
+.dateTable tfoot td.dt-head-right {
+    text-align: right;
+}
+
+.dataTable tbody th.dt-body-left,
+.dataTable tbody td.dt-body-left {
+    text-align: left;
+}
+
+.dataTable tbody th.dt-body-center,
+.dataTable tbody td.dt-body-center {
+    text-align: center;
+}
+.dataTable tbody th.dt-body-right,
+.dataTable tbody td.dt-body-right {
+    text-align: right;
+}
+
+.dataTables_paginate {
+    float: right;
+    margin-top: 10px;
+    .paginate_button {
+        display: inline-block;
+        overflow: hidden;
+        cursor: pointer;
+        text-align: center;
+        color: @text-color;
+        min-width: 22px;
+        height: 22px;
+        line-height: 20px;
+        border: 1px solid transparent;
+        border-radius: @border-radius-base;
+        padding: 0 @padding-base-horizontal;
+        &:hover {
+            text-decoration: none;
+        }
+        &.current {
+            border-color: @control-border-color;
+            background-color: @active-bg;
+            color: @active-text-color;
+        }
+        &.previous,
+        &.next {
+            color: @btn-text-color;
+            border-color: @control-border-color;
+            background-color: @btn-bg;
+            &:hover {
+                background-color: @btn-hover-bg;
+            }
+            &:active {
+                background-color: @btn-active-bg;
+            }
+            &.disabled {
+                background-color: @btn-disabled-bg;
+                color: @btn-disabled-text-color;
+            }
+        }
+        
+        &.previous {
+            margin-right: 5px;
+            &::before {
+                content: '';
+                margin-right: 1px;
+                .caret-left(5px, @btn-text-color);
+            }
+            &.disabled::before {
+                border-right-color: @btn-disabled-text-color;
+            }
+        }
+        
+        &.next {
+            margin-left: 5px;
+            &::after {
+                content: '';
+                margin-left: 1px;
+                .caret-right(5px, @btn-text-color);
+            }
+            &.disabled::after {
+                border-left-color: @btn-disabled-text-color;
+            }
+        }
+    }
+}

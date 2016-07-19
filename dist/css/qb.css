@@ -417,7 +417,7 @@ a:active {
   line-height: 1.42857143;
   padding: 2px 15px;
   border: 1px solid #242527;
-  border-radius: 3px;
+  border-radius: 4px;
   color: #fff;
   background-color: #0f898a;
   user-select: none;
@@ -448,38 +448,43 @@ a.btn.disabled {
   cursor: default;
 }
 /* input */
-.text-input {
+.text-input,
+.chosen-container-single .chosen-search input {
   font-size: 14px;
   line-height: 1.42857143;
   padding: 2px 5px;
   border: 1px solid #242527;
-  border-radius: 3px;
+  border-radius: 4px;
   background-color: #6e6c49;
   color: #000;
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.3);
   outline: none;
 }
-.text-input:focus {
+.text-input:focus,
+.chosen-container-single .chosen-search input:focus {
   background-color: #eb8b19;
 }
-.text-input[disabled] {
+.text-input[disabled],
+.chosen-container-single .chosen-search input[disabled] {
   background-color: #3e3e3e;
   box-shadow: none;
 }
-.text-input.search {
+.text-input.search,
+.chosen-container-single .chosen-search input.search {
   background-image: url("../img/search.png");
   background-repeat: no-repeat;
   background-position: 4px center;
   padding-left: 26px;
 }
-.text-input.date {
+.text-input.date,
+.chosen-container-single .chosen-search input.date {
   color: #ffebc8;
   background-color: #19473e;
   background-image: url("../img/calendar.png");
   background-repeat: no-repeat;
   background-position: top 2px right 2px;
   padding-right: 26px;
-  width: 120px;
+  width: 130px;
 }
 /* Tab Group */
 .tab-group {
@@ -533,7 +538,6 @@ a.btn.disabled {
   border-radius: 2px;
 }
 .datepicker-dropdown {
-  margin-top: 2px;
   padding: 4px;
   position: absolute;
   top: 100%;
@@ -642,47 +646,39 @@ a.btn.disabled {
 .datepicker.datepicker-inline td {
   padding: 0px 5px;
 }
-/*check*/
-.check {
+.icheckbox,
+.iradio {
   display: inline-block;
+  vertical-align: text-bottom;
+  width: 16px;
+  height: 16px;
+  background: url(../img/check.png) no-repeat;
   cursor: pointer;
 }
-.check.disabled {
-  cursor: default;
-}
-.check > input {
-  display: none;
-}
-.check .check-icon {
-  display: inline-block;
-  background-image: url(../img/check.png);
-  background-repeat: no-repeat;
-  height: 16px;
-  width: 16px;
-  vertical-align: -3px;
-}
-.check.check-checkbox > .check-icon {
+.icheckbox {
   background-position: 0 0;
 }
-.check.check-checkbox.checked > .check-icon {
+.icheckbox.checked {
   background-position: -16px 0;
 }
-.check.check-checkbox.disabled > .check-icon {
+.icheckbox.disabled {
+  cursor: default;
   background-position: -32px 0;
 }
-.check.check-checkbox.checked.disabled > .check-icon {
+.icheckbox.checked.disabled {
   background-position: -48px 0;
 }
-.check.check-radio > .check-icon {
-  background-position: 0px -16px;
+.iradio {
+  background-position: 0 -16px;
 }
-.check.check-radio.checked > .check-icon {
+.iradio.checked {
   background-position: -16px -16px;
 }
-.check.check-radio.disabled > .check-icon {
+.iradio.disabled {
+  cursor: default;
   background-position: -32px -16px;
 }
-.check.check-radio.checked.disabled > .check-icon {
+.iradio.checked.disabled {
   background-position: -48px -16px;
 }
 /* qTip2 v2.2.1 | Plugins: None | Styles: core | qtip2.com | Licensed MIT | Sat Sep 06 2014 20:21:13 */
@@ -842,7 +838,7 @@ a.btn.disabled {
   height: 22px;
   line-height: 20px;
   border: 1px solid transparent;
-  border-radius: 3px;
+  border-radius: 4px;
   padding: 0 5px;
 }
 .dataTables_paginate .paginate_button:hover {
@@ -899,4 +895,241 @@ a.btn.disabled {
 }
 .dataTables_paginate .paginate_button.next.disabled::after {
   border-left-color: #929292;
+}
+.chosen-container {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+}
+.chosen-container a {
+  cursor: pointer;
+  color: #000;
+  text-decoration: none;
+}
+.chosen-container-single .chosen-single {
+  font-size: 14px;
+  line-height: 1.42857143;
+  padding: 2px 5px;
+  border: 1px solid #242527;
+  border-radius: 4px;
+  position: relative;
+  display: block;
+  overflow: hidden;
+  background-color: #6e6c49;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.3);
+}
+.chosen-container-single .chosen-single span {
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  margin-right: 24.00000001px;
+}
+.chosen-container-single .chosen-single div {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 24.00000001px;
+  width: 24.00000001px;
+  background-color: #005959;
+  color: #fff;
+  text-align: center;
+  line-height: 24.00000001px;
+  box-shadow: -1px 0 1px rgba(0, 0, 0, 0.2), inset 0 0 1px rgba(255, 255, 255, 0.2);
+}
+.chosen-container-single .chosen-single div::after {
+  content: '\25be';
+  margin-right: 1px;
+}
+.chosen-container .chosen-drop {
+  position: absolute;
+  top: 100%;
+  left: -9999px;
+  z-index: 1010;
+  width: 100%;
+  background-color: #092424;
+  font-size: 14px;
+  line-height: 1.42857143;
+}
+.chosen-container.chosen-with-drop .chosen-drop {
+  left: 0;
+}
+.chosen-container-single.chosen-container-single-nosearch .chosen-search {
+  position: absolute;
+  left: -9999px;
+}
+.chosen-container .chosen-results {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  overflow-x: hidden;
+  overflow-y: auto;
+  max-height: 208px;
+  color: #ffebc8;
+}
+.chosen-container .chosen-results li {
+  padding: 3px 8px;
+}
+.chosen-container .chosen-results li.highlighted {
+  background-color: #295d5d;
+}
+.chosen-container .chosen-results li.active-result {
+  cursor: pointer;
+}
+.chosen-container .chosen-results li.disabled-result {
+  cursor: default;
+  color: #7f7f7f;
+}
+.chosen-container .chosen-results li em {
+  background-color: #ff900c;
+  color: #000;
+  font-style: normal;
+}
+.chosen-container.chosen-disabled a {
+  cursor: default;
+  background-color: #3e3e3e;
+  box-shadow: none;
+}
+.chosen-container-single.chosen-disabled .chosen-single div {
+  background-color: #636363;
+  color: #929292;
+  box-shadow: none;
+}
+.chosen-container-single .chosen-search {
+  padding: 3px 3px;
+}
+.chosen-container-single .chosen-search input {
+  width: 100%;
+}
+/*! jQuery UI - v1.12.0 - 2016-07-19
+* http://jqueryui.com
+* Includes: core.css, autocomplete.css, menu.css
+* Copyright jQuery Foundation and other contributors; Licensed MIT */
+/* Layout helpers
+----------------------------------*/
+.ui-helper-hidden {
+  display: none;
+}
+.ui-helper-hidden-accessible {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+.ui-helper-reset {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  line-height: 1.3;
+  text-decoration: none;
+  font-size: 100%;
+  list-style: none;
+}
+.ui-helper-clearfix:before,
+.ui-helper-clearfix:after {
+  content: "";
+  display: table;
+  border-collapse: collapse;
+}
+.ui-helper-clearfix:after {
+  clear: both;
+}
+.ui-helper-zfix {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  position: absolute;
+  opacity: 0;
+  filter: alpha(opacity=0);
+  /* support: IE8 */
+}
+.ui-front {
+  z-index: 100;
+}
+/* Interaction Cues
+----------------------------------*/
+.ui-state-disabled {
+  cursor: default !important;
+  pointer-events: none;
+}
+/* Icons
+----------------------------------*/
+.ui-icon {
+  display: inline-block;
+  vertical-align: middle;
+  margin-top: -0.25em;
+  position: relative;
+  text-indent: -99999px;
+  overflow: hidden;
+  background-repeat: no-repeat;
+}
+.ui-widget-icon-block {
+  left: 50%;
+  margin-left: -8px;
+  display: block;
+}
+/* Misc visuals
+----------------------------------*/
+/* Overlays */
+.ui-widget-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.ui-autocomplete {
+  position: absolute;
+  top: 0;
+  left: 0;
+  cursor: default;
+}
+.ui-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: block;
+  outline: 0;
+}
+.ui-menu .ui-menu {
+  position: absolute;
+}
+.ui-menu .ui-menu-item {
+  margin: 0;
+  cursor: pointer;
+  /* support: IE10, see #8844 */
+  list-style-image: url("data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7");
+}
+.ui-menu .ui-menu-item-wrapper {
+  position: relative;
+  padding: 3px 8px;
+}
+.ui-menu .ui-menu-divider {
+  margin: 5px 0;
+  height: 0;
+  font-size: 0;
+  line-height: 0;
+  border-width: 1px 0 0 0;
+}
+.ui-autocomplete {
+  background-color: #092424;
+  color: #ffebc8;
+  font-size: 14px;
+  line-height: 1.42857143;
+  max-height: 208px;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+.ui-autocomplete.ui-menu .ui-state-active {
+  background-color: #295d5d;
 }

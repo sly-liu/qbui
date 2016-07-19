@@ -69,7 +69,7 @@ a {
     text-align: center;
     white-space: nowrap;
     .control-size(@font-size-base;@line-height-base;@btn-padding-base-vertical;
-        @btn-padding-base-horizontal;@control-border-color;@border-radius-base);
+        @btn-padding-base-horizontal;@input-border-color;@border-radius-base);
     color: @btn-text-color;
     background-color: @btn-bg;
     .user-select(none);
@@ -102,7 +102,7 @@ a {
 /* input */
 .text-input {
     .control-size(@font-size-base;@line-height-base;@padding-base-vertical;
-        @padding-base-horizontal;@control-border-color;@border-radius-base);
+        @padding-base-horizontal;@input-border-color;@border-radius-base);
     background-color: @input-bg;
     color: @input-text-color;
     box-shadow: @input-box-shadow;
@@ -123,7 +123,7 @@ a {
         color: @text-color;
         background-color: @date-input-bg;
         .input-icon-right("../img/calendar.png"; top 2px right 2px);
-        width: 120px;
+        width: 130px;
     }
 }
 

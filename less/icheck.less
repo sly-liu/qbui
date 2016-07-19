@@ -1,0 +1,37 @@
+.icheckbox,
+.iradio {
+    display: inline-block;
+    vertical-align: text-bottom;
+    width: 16px;
+    height: 16px;
+    background: url(../img/check.png) no-repeat;
+    cursor: pointer;
+}
+
+.icheckbox {
+    background-position: 0 0;
+    &.checked {
+        background-position: -16px 0;
+    }
+    &.disabled {
+        cursor: default;
+        background-position: -32px 0;
+    }
+    &.checked.disabled {
+        background-position: -48px 0;
+    }
+}
+
+.iradio {
+    background-position: 0 -16px;
+    &.checked {
+        background-position: -16px -16px;
+    }
+    &.disabled {
+        cursor: default;
+        background-position: -32px -16px;
+    }
+    &.checked.disabled {
+        background-position: -48px -16px;
+    }
+}

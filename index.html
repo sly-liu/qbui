@@ -17,7 +17,42 @@
             daysOfWeekHighlighted: "0,6"
         });
         
-        $('#checks>label').check();
+        $("#speed").chosen({
+            width: '200px',
+            disable_search_threshold: 10
+        });
+        
+        var availableTags = [
+          "ActionScript",
+          "AppleScript",
+          "Asp",
+          "BASIC",
+          "C",
+          "C++",
+          "Clojure",
+          "COBOL",
+          "ColdFusion",
+          "Erlang",
+          "Fortran",
+          "Groovy",
+          "Haskell",
+          "Java",
+          "JavaScript",
+          "Lisp",
+          "Perl",
+          "PHP",
+          "Python",
+          "Ruby",
+          "Scala",
+          "Scheme"
+        ];
+        $( "#tags" ).autocomplete({
+          source: availableTags,
+          autoFocus: true
+        });
+        
+        //$('#checks>label').check();
+        $('#checks input').iCheck();
 
         $('#tabGroup').tab();
 
@@ -66,6 +101,22 @@
         <input type="text" class="text-input" disabled value="disabled input">
         <input type="text" class="text-input search" value="搜索">
         <input type="text" class="text-input date" id="datepicker">
+    </div>
+    
+    <p>Select:</p>
+    <div class="examples">
+        <select name="speed" id="speed">
+            <option>Slower</option>
+            <option>Slow</option>
+            <option selected="selected">Medium</option>
+            <option>Fast</option>
+            <option>Faster</option>
+        </select>
+    </div>
+    
+    <p>Autocomplete:</p>
+    <div class="examples">
+        <input type="text" id="tags" class="text-input">
     </div>
     
     <p>Checkbox/Radio:</p>

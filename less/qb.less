@@ -1,76 +1,17 @@
+// Core variables and mixins
 @import url(config.less);
+@import url(mixin.less);
+
+// Reset
 @import url(normalize.less);
+
+// Core CSS
 @import url(core.less);
+
+// Plugins
 @import url(datepicker.less);
 @import url(icheck.less);
 @import url(qtip.less);
 @import url(datatables.less);
 @import url(chosen.less);
 @import url(jquery-ui.less);
-
-.user-select(@value) {
-    user-select: @value;
-    -moz-user-select: @value;
-    -ms-user-select: @value;
-    -webkit-user-select: @value;
-}
-
-.control-size(@font-size; @line-height; @padding-vertical; @padding-horizontal; @border-color; @border-radius) {
-    font-size: @font-size;
-    line-height: @line-height;
-    padding: @padding-vertical @padding-horizontal;
-    border: 1px solid @border-color;
-    border-radius: @border-radius;
-}
-
-.bg-img(@background-image; @background-repeat; @background-position) {
-    background-image: @background-image;
-    background-repeat: @background-repeat;
-    background-position: @background-position;
-}
-
-.input-icon-left(@image; @background-position) {
-    @background-image: url(@image);
-    .bg-img(@background-image; no-repeat; @background-position);
-    padding-left: @input-icon-padding;
-}
-
-.input-icon-right(@image; @background-position) {
-    @background-image: url(@image);
-    .bg-img(@background-image; no-repeat; @background-position);
-    padding-right: @input-icon-padding;
-}
-
-.list-unstyle() {
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
-}
-
-.caret-up(@size, @color) {
-    display: inline-block;
-    border-bottom: @size solid @color;
-    border-left: @size solid transparent;
-    border-right: @size solid transparent;
-}
-
-.caret-down(@size, @color) {
-    display: inline-block;
-    border-top: @size solid @color;
-    border-left: @size solid transparent;
-    border-right: @size solid transparent;
-}
-
-.caret-left(@size, @color) {
-    display: inline-block;
-    border-right: @size solid @color;
-    border-top: @size solid transparent;
-    border-bottom: @size solid transparent;
-}
-
-.caret-right(@size, @color) {
-    display: inline-block;
-    border-left: @size solid @color;
-    border-top: @size solid transparent;
-    border-bottom: @size solid transparent;
-}
